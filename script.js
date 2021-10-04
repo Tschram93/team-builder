@@ -1,6 +1,13 @@
 var inquirer = require('inquirer');
 var jest = require(`jest`);
 
+// Inquirer asks question for each employee and information about them
+
+// TODO: What is the employee name
+// TODO: What is the employee job position
+// TODO: What is the employee ix #?
+// TODO: What is this employee's Github profile link?
+// TODO: What is this employee's email?
 
 // inquirer
 //   .prompt([
@@ -16,3 +23,9 @@ var jest = require(`jest`);
 //       // Something else went wrong
 //     }
 //   });
+
+// TODO: CREATE CARD FOR EACH EMPLOYEE
+
+// Write out a test for errors 
+
+// Error catch
