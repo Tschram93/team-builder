@@ -1,1 +1,1 @@
-const Employee = require('./Employee')
+const Manager = require('../library/Manager')
