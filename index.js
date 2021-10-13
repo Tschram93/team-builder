@@ -10,13 +10,76 @@ const path = require('path');
 const fs = require('fs');
 
 
-// Inquirer asks question for each employee and information about them
+// TEAM variable
+let team = [];
 
-// TODO: What is the employee name
-// TODO: What is the employee job position
-// TODO: What is the employee ix #?
+// PATH
+const outputDir = path.resolve(__dirname, 'output');
+const outputPath = path.join(outputDir, 'index.html');
+
+// Set a way to render app into html
+const teamEmployees = {
+    Manager: [{
+            // TODO: What is the employee name
+            message: 'What is the name of the manager?',
+            type: 'input',
+            name: "nameManager"
+        },
+        {
+            // TODO: What is the employee id #?
+            message: `What is this employee's id number?`,
+            type: 'input',
+            name: 'idManager'
+        },
+        {
+            // TODO: What is this employee's email?
+            message: `What is Email address for the manager?`,
+            type: 'input',
+            name: 'emailManager'
+        },
+        {
+            // TODO: Office number
+            message: `What is the manager's office number?`,
+            type: 'input',
+            name: 'officeNumber'
+        }
+    ],
+
+    Engineer: [{
+            message: `What is this engineer's name?`,
+            type: 'input',
+            name: 'nameEngineer'
+        },
+        {
+            message: `What is this employee's id number?`,
+            type: 'input',
+            name: 'idEngineer'
+        },
+        {
+            message: `What is Email address for the engineer?`,
+            type: 'input',
+            name: 'emailEngineer'
+        },
+        {
+            message: `What is the github profile username of this engineer?`,
+            type: 'input',
+            name: 'githubEngineer'
+        }
+    ]
+
+
+
+
+
+
+}
+// TODO: Set up inquirer questions 
+
+
+
+
 // TODO: What is this employee's Github profile link?
-// TODO: What is this employee's email?
+
 
 // inquirer
 //   .prompt([
