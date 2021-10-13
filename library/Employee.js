@@ -9,5 +9,19 @@ class Employee {
         this.email = email;
     }
 }
+nameRequest() {
+    return this.name
+}
+idRequest() {
+    return this.id
+}
+emailRequest() {
+    return this.email
+}
+jobSelection() {
+    return "employee"
+}
+
+
 
 module.exports = Employee;
