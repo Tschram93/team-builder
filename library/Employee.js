@@ -1,11 +1,13 @@
 class Employee {
     //Make constructor with
-    // Name
-
-    //Email
-
-    //Id
-
+    constructor(name, id, email) {
+        // Name
+        this.name = name;
+        //Email
+        this.id = id;
+        //Id
+        this.email = email;
+    }
 }
 
-module.exports = Employee
+module.exports = Employee;

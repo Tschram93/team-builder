@@ -18,7 +18,7 @@ const outputDir = path.resolve(__dirname, 'output');
 const outputPath = path.join(outputDir, 'index.html');
 
 // Set a way to render app into html
-
+var counter = 0;
 const teamEmployees = {
     //  Set up inquirer questions 
     Manager: [{
@@ -96,7 +96,7 @@ const teamEmployees = {
 
 function start() {
     inquirer.prompt(addEmployee).then((answer) => {
-        if (answer.addToRoster === 'yes') {
+        if (answer.addPosition === 'yes') {
             createCard();
         } else {
             fs.writeFileSync(outputPath, render(team));
@@ -112,10 +112,21 @@ const addEmployee = {
     name: 'addToRoster'
 }
 
+function addPosition() {
+    inquirer.prompt([{
+        message: `What is this employee's job position/title?`,
+        choices: ['Manager', 'Engineer', 'Intern'],
+        name: 'jobSelection'
+    }]).then((answer) => {
+        if (answer.jobSelection === 'Manager' && counter < 1) {
+            counter++
+
+            inquirer.prompt(teamEmployees.Manager).then((results) => )
+        }
+    })
+};
 // = render
 
-
-// TODO: What is this employee's Github profile link?
 
 
 // inquirer
