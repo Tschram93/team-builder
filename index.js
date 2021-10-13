@@ -18,27 +18,29 @@ const outputDir = path.resolve(__dirname, 'output');
 const outputPath = path.join(outputDir, 'index.html');
 
 // Set a way to render app into html
+
 const teamEmployees = {
+    //  Set up inquirer questions 
     Manager: [{
-            // TODO: What is the employee name
+            //  What is the employee name
             message: 'What is the name of the manager?',
             type: 'input',
             name: "nameManager"
         },
         {
-            // TODO: What is the employee id #?
+            // What is the employee id #?
             message: `What is this employee's id number?`,
             type: 'input',
             name: 'idManager'
         },
         {
-            // TODO: What is this employee's email?
+            // What is this employee's email?
             message: `What is Email address for the manager?`,
             type: 'input',
             name: 'emailManager'
         },
         {
-            // TODO: Office number
+            // Office number
             message: `What is the manager's office number?`,
             type: 'input',
             name: 'officeNumber'
@@ -88,9 +90,29 @@ const teamEmployees = {
         }
     ]
 }
-// TODO: Set up inquirer questions 
 
 
+//  Starting the app
+
+function start() {
+    inquirer.prompt(addEmployee).then((answer) => {
+        if (answer.addToRoster === 'yes') {
+            createCard();
+        } else {
+            fs.writeFileSync(outputPath, render(team));
+            process.exit(0);
+        }
+    })
+}
+
+const addEmployee = {
+    message: `Add additional employee to roster?`,
+    choices: ['yes', 'no'],
+    type: 'list',
+    name: 'addToRoster'
+}
+
+// = render
 
 
 // TODO: What is this employee's Github profile link?
