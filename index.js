@@ -65,13 +65,28 @@ const teamEmployees = {
             type: 'input',
             name: 'githubEngineer'
         }
+    ],
+    Intern: [{
+            message: `What is this intern's name?`,
+            type: 'input',
+            name: 'nameIntern'
+        },
+        {
+            message: `What is this employee's id number?`,
+            type: 'input',
+            name: 'idIntern'
+        },
+        {
+            message: `What is Email address for the intern?`,
+            type: 'input',
+            name: 'emailIntern'
+        },
+        {
+            message: `What school or university did this intern attend?`,
+            type: 'input',
+            name: 'schoolIntern'
+        }
     ]
-
-
-
-
-
-
 }
 // TODO: Set up inquirer questions 
 
