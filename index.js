@@ -1,5 +1,14 @@
-var inquirer = require('inquirer');
-var jest = require(`jest`);
+//  CLASSES
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+
+// DEPENDENCIES
+const inquirer = require('inquirer');
+const jest = require(`jest`);
+const path = require('path');
+const fs = require('fs');
+
 
 // Inquirer asks question for each employee and information about them
 
