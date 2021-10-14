@@ -19,34 +19,46 @@ const outputPath = path.join(outputDir, 'index.html');
 
 // Set a way to render app into html
 var counter = 0;
-const teamEmployees = {
-    //  Set up inquirer questions 
-    Manager: [{
-            //  What is the employee name
-            message: 'What is the name of the manager?',
-            type: 'input',
-            name: "name"
-        },
-        {
-            // What is the employee id #?
-            message: `What is this employee's id number?`,
-            type: 'input',
-            name: 'id'
-        },
-        {
-            // What is this employee's email?
-            message: `What is Email address for the manager?`,
-            type: 'input',
-            name: 'email'
-        },
-        {
-            // Office number
-            message: `What is the manager's office number?`,
-            type: 'input',
-            name: 'officeNumber'
-        }
-    ],
-    Subordinates: [{
+const managerQuestions = () {
+    return inquirer.prompt([
+            //  Set up inquirer questions 
+            {
+                //  What is the employee name
+                message: 'What is the name of the manager?',
+                type: 'input',
+                name: "name"
+            }, {
+                // What is the employee id #?
+                message: `What is this employee's id number?`,
+                type: 'input',
+                name: 'id'
+            }, {
+                // What is this employee's email?
+                message: `What is Email address for the manager?`,
+                type: 'input',
+                name: 'email'
+            }, {
+                // Office number
+                message: `What is the manager's office number?`,
+                type: 'input',
+                name: 'officeNumber'
+            }
+        ])
+        .then(managerQuestions => {
+            const {
+                name,
+                id,
+                email,
+                officeNumber
+            } = managerQuestions;
+            const manager = new Manager(name, id, email, officeNumber);
+            team.push(manager)
+            console.log(manager)
+        })
+};
+
+// Same but now with employees instead of manager
+Staff: [{
             message: `Select the employee's job position.`,
             type: 'list',
             choices: ['Engineer', 'Intern'],
@@ -74,12 +86,29 @@ const teamEmployees = {
             when: (input) => input.role == "Engineer"
         },
         {
-            message: ``,
-            type: '',
-            name: '',
+            message: `What school did the intern attend?`,
+            type: 'input',
+            name: 'school',
             when: (input) => input.role == "Intern"
+        },
+        {
+            message: `Add additional employee to roster?`,
+            choices: ['yes', 'no'],
+            type: 'list',
+            name: 'addToRoster'
         }
     ]
+    .then(jobData => {
+        let {
+            name,
+            id,
+            email,
+            role,
+            github,
+            school,
+            addToRoster
+        } = jobData
+    })
 }
 
 
@@ -96,26 +125,22 @@ function start() {
     })
 }
 
-const addEmployee = {
-    message: `Add additional employee to roster?`,
-    choices: ['yes', 'no'],
-    type: 'list',
-    name: 'addToRoster'
-}
 
-function addPosition() {
-    inquirer.prompt([{
-        message: `What is this employee's job position/title?`,
-        choices: ['Manager', 'Engineer', 'Intern'],
-        name: 'jobSelection'
-    }]).then((answer) => {
-        if (answer.jobSelection === 'Manager' && counter < 1) {
-            counter++
 
-            inquirer.prompt(teamEmployees.Manager).then((results) => )
-        }
-    })
-};
+
+// function addPosition() {
+//     inquirer.prompt([{
+//         message: `What is this employee's job position/title?`,
+//         choices: ['Manager', 'Engineer', 'Intern'],
+//         name: 'jobSelection'
+//     }]).then((answer) => {
+//         if (answer.jobSelection === 'Manager' && counter < 1) {
+//             counter++
+
+//             inquirer.prompt(teamEmployees.Manager).then((results) => )
+//         }
+//     })
+// };
 // = render
 
 
