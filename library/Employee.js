@@ -1,27 +1,28 @@
+//  Assign Employee Class
+
 class Employee {
-    //Make constructor with
     constructor(name, id, email) {
-        // Name
         this.name = name;
-        //Email
         this.id = id;
-        //Id
-        this.email = email;
+        this.email = email
     }
-}
-getName() {
-    return this.name;
-}
-getID() {
-    return this.id;
-}
-getEmail() {
-    return this.email;
-}
-jobSelection() {
-    return "Employee";
-}
 
+    nameRequest() {
+        return this.name;
+    }
 
+    idRequest() {
+        return this.id;
+    }
 
+    emailRequest() {
+        return this.email;
+    }
+
+    jobSelection() {
+        return 'Employee';
+    }
+};
+
+// to be exported 
 module.exports = Employee;

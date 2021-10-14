@@ -9,6 +9,8 @@ const jest = require(`jest`);
 const path = require('path');
 const fs = require('fs');
 
+//Link html template
+const render = require('./src/index.html');
 
 // TEAM variable
 let team = [];
@@ -126,9 +128,9 @@ const staffQuestions = () => {
         })
 };
 
-
+// Error catch
 const writeFile = data => {
-    fs.writeFile('.index.html', data, err => {
+    fs.writeFile('./src/index.html', data, err => {
         if (err) {
             console.log(err);
             return;
@@ -138,58 +140,15 @@ const writeFile = data => {
     })
 };
 
-
-
-//  Starting the app
-
-// function start() {
-//     inquirer.prompt(addEmployee).then((answer) => {
-//         if (answer.addPosition === 'yes') {
-//             createCard();
-//         } else {
-//             fs.writeFileSync(outputPath, render(team));
-//             process.exit(0);
-//         }
-//     })
-// }
-
-
-
-
-// function addPosition() {
-//     inquirer.prompt([{
-//         message: `What is this employee's job position/title?`,
-//         choices: ['Manager', 'Engineer', 'Intern'],
-//         name: 'jobSelection'
-//     }]).then((answer) => {
-//         if (answer.jobSelection === 'Manager' && counter < 1) {
-//             counter++
-
-//             inquirer.prompt(teamEmployees.Manager).then((results) => )
-//         }
-//     })
-// };
-// = render
-
-
-
-// inquirer
-//   .prompt([
-//     /* Pass your questions in here */
-//   ])
-//   .then((answers) => {
-//     // Use user feedback for... whatever!!
-//   })
-//   .catch((error) => {
-//     if (error.isTtyError) {
-//       // Prompt couldn't be rendered in the current environment
-//     } else {
-//       // Something else went wrong
-//     }
-//   });
-
-// TODO: CREATE CARD FOR EACH EMPLOYEE
-
-// Write out a test for errors 
-
-// Error catch
+managerQuestions()
+    .then(staffQuestions)
+    .then(team => {
+        return render(team);
+    })
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
+    // add error catch
+    .catch(err => {
+        console.log(err);
+    });
