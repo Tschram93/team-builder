@@ -1,7 +1,6 @@
 {
   "name": "team-build",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -24,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/Tschram93/team-builder/issues"
   },
-  "homepage": "https://github.com/Tschram93/team-builder#readme"
+  "homepage": "https://github.com/Tschram93/team-builder#readme",
+  "description": ""
 }

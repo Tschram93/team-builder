@@ -1,7 +1,7 @@
 //  CLASSES
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
+const Manager = require('./library/Manager');
+const Engineer = require('./library/Engineer');
+const Intern = require('./library/Intern');
 
 // DEPENDENCIES
 const inquirer = require('inquirer');
