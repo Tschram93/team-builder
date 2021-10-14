@@ -18,8 +18,8 @@ const outputDir = path.resolve(__dirname, 'output');
 const outputPath = path.join(outputDir, 'index.html');
 
 // Set a way to render app into html
-var counter = 0;
-const managerQuestions = () {
+
+const managerQuestions = () => {
     return inquirer.prompt([
             //  Set up inquirer questions 
             {
@@ -58,58 +58,73 @@ const managerQuestions = () {
 };
 
 // Same but now with employees instead of manager
-Staff: [{
-            message: `Select the employee's job position.`,
-            type: 'list',
-            choices: ['Engineer', 'Intern'],
-            name: 'role'
-        },
-        {
-            message: `What is this employee's name??`,
-            type: 'input',
-            name: 'name'
-        },
-        {
-            message: `What is this employee's id number?`,
-            type: 'input',
-            name: 'id'
-        },
-        {
-            message: `What is Email address for the engineer?`,
-            type: 'input',
-            name: 'email'
-        },
-        {
-            message: `What is the github profile username of this engineer?`,
-            type: 'input',
-            name: 'github',
-            when: (input) => input.role == "Engineer"
-        },
-        {
-            message: `What school did the intern attend?`,
-            type: 'input',
-            name: 'school',
-            when: (input) => input.role == "Intern"
-        },
-        {
-            message: `Add additional employee to roster?`,
-            choices: ['yes', 'no'],
-            type: 'list',
-            name: 'addToRoster'
-        }
-    ]
-    .then(jobData => {
-        let {
-            name,
-            id,
-            email,
-            role,
-            github,
-            school,
-            addToRoster
-        } = jobData
-    })
-}
+const staffQuestions = () => {
+    return inquirer.prompt([{
+                message: `Select the employee's job position.`,
+                type: 'list',
+                choices: ['Engineer', 'Intern'],
+                name: 'role'
+            },
+            {
+                message: `What is this employee's name??`,
+                type: 'input',
+                name: 'name'
+            },
+            {
+                message: `What is this employee's id number?`,
+                type: 'input',
+                name: 'id'
+            },
+            {
+                message: `What is Email address for the engineer?`,
+                type: 'input',
+                name: 'email'
+            },
+            {
+                message: `What is the github profile username of this engineer?`,
+                type: 'input',
+                name: 'github',
+                when: (input) => input.role == "Engineer"
+            },
+            {
+                message: `What school did the intern attend?`,
+                type: 'input',
+                name: 'school',
+                when: (input) => input.role == "Intern"
+            },
+            {
+                message: `Add additional employee to roster?`,
+                choices: ['yes', 'no'],
+                type: 'list',
+                name: 'addToRoster'
+            }
+        ])
+        .then(jobData => {
+            let {
+                name,
+                id,
+                email,
+                role,
+                github,
+                school,
+                addToRoster
+            } = jobData
+
+            let staff;
+            if (role === 'Intern') {
+                staff = new Intern(name, id, email, school);
+            } else if (role = 'Engineer') {
+                staff = new Engineer(name, id, email, github);
+            }
+            team.push(staff);
+
+            if (addToRoster) {
+                return staffQuestions(team);
+            } else {
+                return team;
+            }
+        })
+};
 
 
 //  Starting the app
