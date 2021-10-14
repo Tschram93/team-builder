@@ -9,17 +9,17 @@ class Employee {
         this.email = email;
     }
 }
-nameRequest() {
-    return this.name
+getName() {
+    return this.name;
 }
-idRequest() {
-    return this.id
+getID() {
+    return this.id;
 }
-emailRequest() {
-    return this.email
+getEmail() {
+    return this.email;
 }
 jobSelection() {
-    return "employee"
+    return "Employee";
 }
 
 
