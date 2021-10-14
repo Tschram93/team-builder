@@ -127,18 +127,31 @@ const staffQuestions = () => {
 };
 
 
-//  Starting the app
-
-function start() {
-    inquirer.prompt(addEmployee).then((answer) => {
-        if (answer.addPosition === 'yes') {
-            createCard();
+const writeFile = data => {
+    fs.writeFile('.index.html', data, err => {
+        if (err) {
+            console.log(err);
+            return;
         } else {
-            fs.writeFileSync(outputPath, render(team));
-            process.exit(0);
+            console.log("The Employees have been generated into an html file!")
         }
     })
-}
+};
+
+
+
+//  Starting the app
+
+// function start() {
+//     inquirer.prompt(addEmployee).then((answer) => {
+//         if (answer.addPosition === 'yes') {
+//             createCard();
+//         } else {
+//             fs.writeFileSync(outputPath, render(team));
+//             process.exit(0);
+//         }
+//     })
+// }
 
 
 
