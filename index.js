@@ -10,14 +10,14 @@ const path = require('path');
 const fs = require('fs');
 
 //Link html template
-const render = require('./src/index.html');
+const render = require('./src/generate.js');
 
 // TEAM variable
 let team = [];
 
 // PATH
 const outputDir = path.resolve(__dirname, 'output');
-const outputPath = path.join(outputDir, 'index.html');
+const outputPath = path.join(outputDir, './src/generate.js');
 
 // Set a way to render app into html
 
@@ -130,7 +130,7 @@ const staffQuestions = () => {
 
 // Error catch
 const writeFile = data => {
-    fs.writeFile('./src/index.html', data, err => {
+    fs.writeFile('./src/generate.js', data, err => {
         if (err) {
             console.log(err);
             return;
