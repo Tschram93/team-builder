@@ -25,19 +25,19 @@ const teamEmployees = {
             //  What is the employee name
             message: 'What is the name of the manager?',
             type: 'input',
-            name: "nameManager"
+            name: "name"
         },
         {
             // What is the employee id #?
             message: `What is this employee's id number?`,
             type: 'input',
-            name: 'idManager'
+            name: 'id'
         },
         {
             // What is this employee's email?
             message: `What is Email address for the manager?`,
             type: 'input',
-            name: 'emailManager'
+            name: 'email'
         },
         {
             // Office number
@@ -46,47 +46,38 @@ const teamEmployees = {
             name: 'officeNumber'
         }
     ],
-
-    Engineer: [{
-            message: `What is this engineer's name?`,
+    Subordinates: [{
+            message: `Select the employee's job position.`,
+            type: 'list',
+            choices: ['Engineer', 'Intern'],
+            name: 'role'
+        },
+        {
+            message: `What is this employee's name??`,
             type: 'input',
-            name: 'nameEngineer'
+            name: 'name'
         },
         {
             message: `What is this employee's id number?`,
             type: 'input',
-            name: 'idEngineer'
+            name: 'id'
         },
         {
             message: `What is Email address for the engineer?`,
             type: 'input',
-            name: 'emailEngineer'
+            name: 'email'
         },
         {
             message: `What is the github profile username of this engineer?`,
             type: 'input',
-            name: 'githubEngineer'
-        }
-    ],
-    Intern: [{
-            message: `What is this intern's name?`,
-            type: 'input',
-            name: 'nameIntern'
+            name: 'github',
+            when: (input) => input.role == "Engineer"
         },
         {
-            message: `What is this employee's id number?`,
-            type: 'input',
-            name: 'idIntern'
-        },
-        {
-            message: `What is Email address for the intern?`,
-            type: 'input',
-            name: 'emailIntern'
-        },
-        {
-            message: `What school or university did this intern attend?`,
-            type: 'input',
-            name: 'schoolIntern'
+            message: ``,
+            type: '',
+            name: '',
+            when: (input) => input.role == "Intern"
         }
     ]
 }
