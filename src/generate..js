@@ -23,3 +23,4 @@
 
 
 // TODO: export module
+module.exports = generate;
