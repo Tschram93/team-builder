@@ -1,13 +1,22 @@
 // REMINDER: Use bootstrap classes 
 
-//  Create cards for each of the following: Manager, Engineer, Intern
+// Create cards for each of the following: Manager, Engineer, Intern
+// Help video for html javascript templates https://www.youtube.com/watch?v=NgF9-pdTDGs
 
 // TODO: Manager Card
 
+const createManagerCard = ;
+
 // TODO: Engineer Card
+
+const createEngineerCard = ;
 
 // TODO: Intern
 
+const creatInternCard = ;
+
+
+// TODO: Needs to push data to the page
 
 // Function for each job position
 
@@ -22,5 +31,5 @@
 // TODO: Generate the page as HTML file
 
 
-// TODO: export module
+// export module
 module.exports = generate;
