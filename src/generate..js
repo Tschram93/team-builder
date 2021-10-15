@@ -13,7 +13,7 @@ const createEngineerCard = ;
 
 // TODO: Intern
 
-const creatInternCard = ;
+const createInternCard = ;
 
 
 // TODO: Needs to push data to the page
