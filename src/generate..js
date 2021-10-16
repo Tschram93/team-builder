@@ -10,21 +10,25 @@
 const createManagerCard = (manager) => {
     // Needs nested template literals 
     return `
-    <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
+    <div class="card bg-secondary bg-opacity-25" style="width: 18rem;">
     <div class="card-body">
+        <!-- Get the blue background top to take up entirety with no grey/whitespace -->
         <section class="bg-primary text-white pb-1">
-            <h5 class="card-title">Alex</h5>
-            <h6 class="card-subtitle mb-2">Engineer</h6>
+            <h5 class="card-title"> ${manager.name} </h5>
+            <h6 class="card-subtitle mb-2">Manager</h6>
         </section>
-        <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
-            <li class="bg-light border border-secondary mb-1">ID: 2</li>
-            <li class="bg-light border border-secondary mb-1">Email: <a
-                    href="mailto: Alex@fake.com">Alex@fake.com</a></li>
-            <li class="bg-light border border-secondary"><a href='https://github.com/null/'>GitHub:</a>
-            </li>
-        </ul>
+        <!-- Figure out how to remove the black solid circles (bullets) for the list -->
+        <div>
+            <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
+                <li class="bg-light border border-secondary mb-1">ID: ${manager.id}</li>
+                <li class="bg-light border border-secondary mb-1">Email: <a
+                        href="mailto: ${manager.email}">${manager.email}</a></li>
+                <li class="bg-light border border-secondary">Office Number: ${manager.officeNumber}
+                </li>
+            </ul>
+        </div>
     </div>
-    </div>
+</div>
     `;
 }
 
