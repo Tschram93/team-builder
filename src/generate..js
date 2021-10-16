@@ -77,14 +77,16 @@ const createInternCard = (Intern) => {
 `;
 }
 
-// Check for if Job was selected
-for (let i = 0; i < data.length, i++)
 
-    // TODO: Needs to push data to the page
-    templateInjection = (data) => {
 
-        emptyArray[];
 
+emptyArray = [];
+// TODO: Needs to push data to the page
+templateInjection = (data) => {
+    // Check for if Job was selected
+    for (let i = 0; i < data.length, i++) {
+        let desiredJobSelected = data[i];
+        const job = desiredJobSelected.jobSelection();
 
         // Function for each job position
         // Find way to match IF a position for function matches answer of inquirer job selection  
@@ -102,8 +104,8 @@ for (let i = 0; i < data.length, i++)
         if (role === 'Intern') {
             let internRole = createInternCard()
         }
-
     }
+}
 
 
 // TODO: Generate the page as HTML file
