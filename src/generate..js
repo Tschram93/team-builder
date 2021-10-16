@@ -80,11 +80,11 @@ const createInternCard = (Intern) => {
 
 
 
-emptyArray = [];
+let emptyArray = [];
 // TODO: Needs to push data to the page
 // Find way to match IF a position for function matches answer of inquirer job selection  
-templateInjection = (data) => {
-    for (let i = 0; i < data.length, i++) {
+employeeContent = (data) => {
+    for (let i = 0; i < data.length; i++) {
         let desiredJobSelected = data[i];
         const job = desiredJobSelected.jobSelection();
 
@@ -106,11 +106,15 @@ templateInjection = (data) => {
             emptyArray.push(internRole)
         }
     }
+    let cardInfo = emptyArray.join('');
+    const compileEmployees = (templateInjection);
 }
 
 
 // TODO: Generate the page as HTML file
+// Need to insert/inject html template into a file
+const templateInjection =
 
 
-// export module
-module.exports = generate;
+    // export module
+    module.exports = generate;
