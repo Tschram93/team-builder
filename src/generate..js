@@ -78,15 +78,18 @@ const createInternCard = (Intern) => {
 }
 
 // TODO: Needs to push data to the page
+generate = (data)
 
 // Function for each job position
-
+// Find way to match IF a position for function matches answer of inquirer job selection  
 // TODO: MANAGER
+manager
 
 // TODO: ENGINEER
+engineer
 
 // TODO: INTERN
-
+intern
 
 
 // TODO: Generate the page as HTML file
