@@ -77,8 +77,13 @@ const createInternCard = (Intern) => {
 `;
 }
 
+// Check for if Job was selected
+
 // TODO: Needs to push data to the page
 generate = (data) => {
+
+    emptyArray[];
+
 
     // Function for each job position
     // Find way to match IF a position for function matches answer of inquirer job selection  
@@ -98,6 +103,7 @@ generate = (data) => {
     }
 
 }
+
 
 // TODO: Generate the page as HTML file
 
