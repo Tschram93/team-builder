@@ -70,7 +70,7 @@ const createInternCard = (Intern) => {
         <h6 class="card-subtitle mb-2">Intern</h6>
     </section>
     <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
-        <li class="bg-light border border-secondary mb-1">ID: ${intern.}id</li>
+        <li class="bg-light border border-secondary mb-1">ID: ${intern.id} id</li>
         <li class="bg-light border border-secondary mb-1">Email: <a
                 href="mailto: ${intern.email}">${intern.email}</a></li>
         <li class="bg-light border border-secondary">School: ${intern.school}

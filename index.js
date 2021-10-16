@@ -28,7 +28,14 @@ const managerQuestions = () => {
                 //  What is the employee name
                 message: 'What is the name of the manager?',
                 type: 'input',
-                name: "name"
+                name: "name",
+                validate: (value) => {
+                    if (value) {
+                        return true
+                    } else {
+                        return 'REQUIRED. Must input text to continue.'
+                    }
+                }
             }, {
                 // What is the employee id #?
                 message: `What is this employee's id number?`,
@@ -70,7 +77,14 @@ const staffQuestions = () => {
             {
                 message: `What is this employee's name??`,
                 type: 'input',
-                name: 'name'
+                name: 'name',
+                validate: (value) => {
+                    if (value) {
+                        return true
+                    } else {
+                        return 'REQUIRED. Must input text to continue.'
+                    }
+                }
             },
             {
                 message: `What is this employee's id number?`,
@@ -143,10 +157,10 @@ const writeFile = data => {
 managerQuestions()
     .then(staffQuestions)
     .then(team => {
-        return render(team);
+        return generate(team);
     })
-    .then(pageHTML => {
-        return writeFile(pageHTML);
+    .then(webPage => {
+        return writeFile(webPage);
     })
     // add error catch
     .catch(err => {
