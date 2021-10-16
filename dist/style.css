@@ -1,0 +1,9 @@
+li {
+    text-indent: 8px;
+    width: 85%;
+}
+
+.card-title,
+.card-subtitle {
+    text-indent: 10px;
+}
