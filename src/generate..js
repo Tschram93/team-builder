@@ -107,7 +107,8 @@ employeeContent = (data) => {
         }
     }
     const cardInfo = emptyArray.join('');
-    const compileEmployees = (templateInjection);
+    const compileEmployees = templateInjection(cardInfo);
+    return compileEmployees;
 }
 
 
