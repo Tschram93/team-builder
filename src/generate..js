@@ -12,25 +12,23 @@ const createManagerCard = ;
 // Template for Manager html
 // Needs nested template literals 
 
-// `    <div class="d-flex justify-content-center flex-wrap">
-// <div class="card bg-secondary bg-opacity-25" style="width: 18rem;">
-//     <div class="card-body">
-//         <!-- Get the blue background top to take up entirety with no grey/whitespace -->
-//         <section class="bg-primary text-white pb-1">
-//             <h5 class="card-title">Jared </h5>
-//             <h6 class="card-subtitle mb-2">Manager</h6>
-//         </section>
-//         <!-- Figure out how to remove the black solid circles (bullets) for the list -->
-//         <div>
-//             <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
-//                 <li class="bg-light border border-secondary mb-1">ID: 1</li>
-//                 <li class="bg-light border border-secondary mb-1">Email: <a
-//                         href="mailto: jaredm@fakemail.com">jared@fakemail.com</a></li>
-//                 <li class="bg-light border border-secondary">Office Number: <span class="officeNum">36C</span>
-//                 </li>
-//             </ul>
-//         </div>
-//     </div>    `
+// `
+// <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
+// <div class="card-body">
+//     <section class="bg-primary text-white pb-1">
+//         <h5 class="card-title">Alex</h5>
+//         <h6 class="card-subtitle mb-2">Engineer</h6>
+//     </section>
+//     <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
+//         <li class="bg-light border border-secondary mb-1">ID: 2</li>
+//         <li class="bg-light border border-secondary mb-1">Email: <a
+//                 href="mailto: Alex@fake.com">Alex@fake.com</a></li>
+//         <li class="bg-light border border-secondary"><a href='https://github.com/null/'>GitHub:</a>
+//         </li>
+//     </ul>
+// </div>
+// </div>
+// `
 
 
 // TODO: Engineer Card
@@ -41,29 +39,38 @@ const createEngineerCard = ;
 // Template for Engineer html
 // Needs nested template literals 
 
-// `                <div class="d-flex justify-content-center flex-wrap">
+// `
 // <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
-//     <div class="card-body">
-//         <section class="bg-primary text-white pb-1">
-//             <h5 class="card-title">Alex</h5>
-//             <h6 class="card-subtitle mb-2">Engineer</h6>
-//         </section>
-//         <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
-//             <li class="bg-light border border-secondary mb-1">ID: 2</li>
-//             <li class="bg-light border border-secondary mb-1">Email: <a
-//                     href="mailto: Alex@fake.com">Alex@fake.com</a></li>
-//             <li class="bg-light border border-secondary"><a
-//                     href='https://github.com/null/'>GitHub:</a>
-//             </li>
-//         </ul>
-//     </div>
+// <div class="card-body">
+//     <section class="bg-primary text-white pb-1">
+//         <h5 class="card-title">Alex</h5>
+//         <h6 class="card-subtitle mb-2">Engineer</h6>
+//     </section>
+//     <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
+//         <li class="bg-light border border-secondary mb-1">ID: 2</li>
+//         <li class="bg-light border border-secondary mb-1">Email: <a
+//                 href="mailto: Alex@fake.com">Alex@fake.com</a></li>
+//         <li class="bg-light border border-secondary">Github: <a
+//                 href='https://github.com/null/'>MrFancyPantz</a>
+//         </li>
+//     </ul>
 // </div>
-// </div>     `
+// </div>                            
+// `
 
 
 // TODO: Intern
 
 const createInternCard = ;
+
+
+// Template for Engineer html
+// Needs nested template literals 
+
+
+`
+
+`
 
 
 // TODO: Needs to push data to the page
