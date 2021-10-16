@@ -6,58 +6,52 @@
 
 // TODO: Manager Card
 
-const createManagerCard = ;
-
-
 // Template for Manager html
-// Needs nested template literals 
-
-// `
-// <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
-// <div class="card-body">
-//     <section class="bg-primary text-white pb-1">
-//         <h5 class="card-title">Alex</h5>
-//         <h6 class="card-subtitle mb-2">Engineer</h6>
-//     </section>
-//     <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
-//         <li class="bg-light border border-secondary mb-1">ID: 2</li>
-//         <li class="bg-light border border-secondary mb-1">Email: <a
-//                 href="mailto: Alex@fake.com">Alex@fake.com</a></li>
-//         <li class="bg-light border border-secondary"><a href='https://github.com/null/'>GitHub:</a>
-//         </li>
-//     </ul>
-// </div>
-// </div>
-// `
-
+const createManagerCard = (manager) => {
+    // Needs nested template literals 
+    return `
+    <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
+    <div class="card-body">
+        <section class="bg-primary text-white pb-1">
+            <h5 class="card-title">Alex</h5>
+            <h6 class="card-subtitle mb-2">Engineer</h6>
+        </section>
+        <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
+            <li class="bg-light border border-secondary mb-1">ID: 2</li>
+            <li class="bg-light border border-secondary mb-1">Email: <a
+                    href="mailto: Alex@fake.com">Alex@fake.com</a></li>
+            <li class="bg-light border border-secondary"><a href='https://github.com/null/'>GitHub:</a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    `;
+}
 
 // TODO: Engineer Card
 
-const createEngineerCard = ;
-
-
 // Template for Engineer html
-// Needs nested template literals 
-
-// `
-// <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
-// <div class="card-body">
-//     <section class="bg-primary text-white pb-1">
-//         <h5 class="card-title">Alex</h5>
-//         <h6 class="card-subtitle mb-2">Engineer</h6>
-//     </section>
-//     <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
-//         <li class="bg-light border border-secondary mb-1">ID: 2</li>
-//         <li class="bg-light border border-secondary mb-1">Email: <a
-//                 href="mailto: Alex@fake.com">Alex@fake.com</a></li>
-//         <li class="bg-light border border-secondary">Github: <a
-//                 href='https://github.com/null/'>MrFancyPantz</a>
-//         </li>
-//     </ul>
-// </div>
-// </div>                            
-// `
-
+const createEngineerCard = (engineer) => {
+    // Needs nested template literals 
+    return `
+<div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
+<div class="card-body">
+    <section class="bg-primary text-white pb-1">
+        <h5 class="card-title">Alex</h5>
+        <h6 class="card-subtitle mb-2">Engineer</h6>
+    </section>
+    <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
+        <li class="bg-light border border-secondary mb-1">ID: 2</li>
+        <li class="bg-light border border-secondary mb-1">Email: <a
+                href="mailto: Alex@fake.com">Alex@fake.com</a></li>
+        <li class="bg-light border border-secondary">Github: <a
+                href='https://github.com/null/'>MrFancyPantz</a>
+        </li>
+    </ul>
+</div>
+</div>                            
+`;
+}
 
 // TODO: Intern
 
