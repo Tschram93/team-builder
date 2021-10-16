@@ -78,31 +78,32 @@ const createInternCard = (Intern) => {
 }
 
 // Check for if Job was selected
+for (let i = 0; i < data.length, i++)
 
-// TODO: Needs to push data to the page
-generate = (data) => {
+    // TODO: Needs to push data to the page
+    templateInjection = (data) => {
 
-    emptyArray[];
+        emptyArray[];
 
 
-    // Function for each job position
-    // Find way to match IF a position for function matches answer of inquirer job selection  
-    // TODO: MANAGER
-    if (role === 'Manager') {
-        let managerRole = createManagerCard()
+        // Function for each job position
+        // Find way to match IF a position for function matches answer of inquirer job selection  
+        // TODO: MANAGER
+        if (role === 'Manager') {
+            let managerRole = createManagerCard()
+        }
+
+        // TODO: ENGINEER
+        if (role === 'Engineer') {
+            let engineerRole = createEngineerCard()
+        }
+
+        // TODO: INTERN
+        if (role === 'Intern') {
+            let internRole = createInternCard()
+        }
+
     }
-
-    // TODO: ENGINEER
-    if (role === 'Engineer') {
-        let engineerRole = createEngineerCard()
-    }
-
-    // TODO: INTERN
-    if (role === 'Intern') {
-        let internRole = createInternCard()
-    }
-
-}
 
 
 // TODO: Generate the page as HTML file
