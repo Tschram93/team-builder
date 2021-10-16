@@ -37,15 +37,15 @@ const createEngineerCard = (engineer) => {
 <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
 <div class="card-body">
     <section class="bg-primary text-white pb-1">
-        <h5 class="card-title">Alex</h5>
+        <h5 class="card-title">${engineer.name}</h5>
         <h6 class="card-subtitle mb-2">Engineer</h6>
     </section>
     <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
-        <li class="bg-light border border-secondary mb-1">ID: 2</li>
+        <li class="bg-light border border-secondary mb-1">ID: ${engineer.id}</li>
         <li class="bg-light border border-secondary mb-1">Email: <a
-                href="mailto: Alex@fake.com">Alex@fake.com</a></li>
+                href="mailto: ${engineer.email}">${engineer.email}</a></li>
         <li class="bg-light border border-secondary">Github: <a
-                href='https://github.com/null/'>MrFancyPantz</a>
+                href='https://github.com/${engineer.github}/'>${engineer.github}</a>
         </li>
     </ul>
 </div>
