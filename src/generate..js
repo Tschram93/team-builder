@@ -78,22 +78,29 @@ const createInternCard = (Intern) => {
 }
 
 // TODO: Needs to push data to the page
-generate = (data)
+generate = (data) => {
 
-// Function for each job position
-// Find way to match IF a position for function matches answer of inquirer job selection  
-// TODO: MANAGER
-if (role === 'Manager')
+    // Function for each job position
+    // Find way to match IF a position for function matches answer of inquirer job selection  
+    // TODO: MANAGER
+    if (role === 'Manager') {
+        let managerRole = createManagerCard()
+    }
 
     // TODO: ENGINEER
-    if (role === 'Engineer')
+    if (role === 'Engineer') {
+        let engineerRole = createEngineerCard()
+    }
 
-        // TODO: INTERN
-        if ('Intern')
+    // TODO: INTERN
+    if (role === 'Intern') {
+        let internRole = createInternCard()
+    }
+
+}
+
+// TODO: Generate the page as HTML file
 
 
-            // TODO: Generate the page as HTML file
-
-
-            // export module
-            module.exports = generate;
+// export module
+module.exports = generate;
