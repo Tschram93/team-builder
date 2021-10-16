@@ -83,17 +83,17 @@ generate = (data)
 // Function for each job position
 // Find way to match IF a position for function matches answer of inquirer job selection  
 // TODO: MANAGER
-manager
+if (role === 'Manager')
 
-// TODO: ENGINEER
-engineer
+    // TODO: ENGINEER
+    if (role === 'Engineer')
 
-// TODO: INTERN
-intern
-
-
-// TODO: Generate the page as HTML file
+        // TODO: INTERN
+        if ('Intern')
 
 
-// export module
-module.exports = generate;
+            // TODO: Generate the page as HTML file
+
+
+            // export module
+            module.exports = generate;
