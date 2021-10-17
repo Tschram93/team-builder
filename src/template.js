@@ -1,5 +1,6 @@
 // REMINDER: Use bootstrap classes 
 
+
 // Create cards for each of the following: Manager, Engineer, Intern
 // Help video for html javascript templates https://www.youtube.com/watch?v=NgF9-pdTDGs
 // TODO: Templates each need a function
@@ -60,13 +61,13 @@ const createEngineerCard = (engineer) => {
 // TODO: Intern
 
 // Template for Engineer html
-const createInternCard = (Intern) => {
+const createInternCard = (intern) => {
     // Needs nested template literals 
     return `
 <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
 <div class="card-body">
     <section class="bg-primary text-white pb-1">
-        <h5 class="card-title">${intern.name}</h5>
+        <h5 class="card-title">${intern.id}</h5>
         <h6 class="card-subtitle mb-2">Intern</h6>
     </section>
     <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
@@ -84,28 +85,31 @@ const createInternCard = (Intern) => {
 
 
 
-let emptyArray = [];
+
 // TODO: Needs to push data to the page
 // Find way to match IF a position for function matches answer of inquirer job selection  
-employeeContent = (data) => {
+template = (data) => {
+
+    let emptyArray = [];
+
     for (let i = 0; i < data.length; i++) {
         let desiredJobSelected = data[i];
         const job = desiredJobSelected.jobSelection();
 
         // Function for each job position
         // TODO: MANAGER
-        if (role === 'Manager') {
+        if (job === 'Manager') {
             let managerRole = createManagerCard(desiredJobSelected)
             emptyArray.push(managerRole)
         }
         // TODO: ENGINEER
-        if (role === 'Engineer') {
+        if (job === 'Engineer') {
             let engineerRole = createEngineerCard(desiredJobSelected)
             emptyArray.push(engineerRole)
         }
 
         // TODO: INTERN
-        if (role === 'Intern') {
+        if (job === 'Intern') {
             let internRole = createInternCard(desiredJobSelected)
             emptyArray.push(internRole)
         }
@@ -153,4 +157,4 @@ const templateInjection = (cardInfo) => {
 }
 
 // export module
-module.exports = generate;
+module.exports = template;

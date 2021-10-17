@@ -2,22 +2,25 @@
 const Manager = require('./library/Manager');
 const Engineer = require('./library/Engineer');
 const Intern = require('./library/Intern');
+const templatejs = require('./src/template.js')
 
 // DEPENDENCIES
 const inquirer = require('inquirer');
-const jest = require(`jest`);
-const path = require('path');
+// const jest = require(`jest`);
+// const path = require('path');
 const fs = require('fs');
 
 //Link html template
-const render = require('./src/generate.js');
+const template = require('./src/template.js');
 
 // TEAM variable
 let team = [];
 
+
+
 // PATH
-const outputDir = path.resolve(__dirname, 'output');
-const outputPath = path.join(outputDir, './src/generate.js');
+// const outputDir = path.resolve(__dirname, 'output');
+// const outputPath = path.join(outputDir, './src/template.js');
 
 // Set a way to render app into html
 
@@ -60,7 +63,10 @@ const managerQuestions = () => {
                 email,
                 officeNumber
             } = managerQuestions;
-            const manager = new Manager(name, id, email, officeNumber);
+            let manager = new Manager(name, id, email, officeNumber);
+            // STRINGIFY
+            const change = JSON.stringify(manager)
+            change
             team.push(manager)
             console.log(manager)
         })
@@ -75,7 +81,7 @@ const staffQuestions = () => {
                 name: 'role'
             },
             {
-                message: `What is this employee's name??`,
+                message: `What is this employee's name?`,
                 type: 'input',
                 name: 'name',
                 validate: (value) => {
@@ -92,7 +98,7 @@ const staffQuestions = () => {
                 name: 'id'
             },
             {
-                message: `What is Email address for the engineer?`,
+                message: `What is Email address for this employee?`,
                 type: 'input',
                 name: 'email'
             },
@@ -116,6 +122,8 @@ const staffQuestions = () => {
             }
         ])
         .then(jobData => {
+            // STRINGIFY
+            const myJSON = JSON.stringify(jobData);
             let {
                 name,
                 id,
@@ -124,8 +132,8 @@ const staffQuestions = () => {
                 github,
                 school,
                 addToRoster
-            } = jobData
-
+            } = jobData;
+            myJSON
             let staff;
             if (role === 'Intern') {
                 staff = new Intern(name, id, email, school);
@@ -134,7 +142,7 @@ const staffQuestions = () => {
             }
             team.push(staff);
 
-            if (addToRoster) {
+            if (addToRoster == 'yes') {
                 return staffQuestions(team);
             } else {
                 return team;
@@ -142,22 +150,53 @@ const staffQuestions = () => {
         })
 };
 
+
 // Error catch
+// const dataString = (data) => {
+//     let stringJson = JSON.stringify(data);
+//     const writeFile = data => {
+//         fs.writeFile('./dist/index.html', data, err => {
+//             if (err) {
+//                 console.log(err);
+//                 return;
+//             } else {
+//                 console.log("The Employee information has been used to make an html file!")
+//             }
+//         })
+//     }
+//     if (data == data) {
+//         stringJson
+//     }
+// }
+
+// function runPLEASE(datastring) {
+//     datastring
+// }
+
+
+// STRINGIFY
 const writeFile = data => {
-    fs.writeFile('./src/generate.js', data, err => {
+    console.log(data);
+    if (data == data) {
+        const stringJSON = JSON.stringify(data);
+
+        stringJSON
+    }
+    console.log(data);
+    fs.writeFile('./dist/index.html', data, err => {
         if (err) {
             console.log(err);
             return;
         } else {
-            console.log("The Employees have been generated into an html file!")
+            console.log("The Employee information has been used to make an html file!")
         }
     })
-};
+}
 
 managerQuestions()
     .then(staffQuestions)
     .then(team => {
-        return generate(team);
+        return template(team);
     })
     .then(webPage => {
         return writeFile(webPage);
