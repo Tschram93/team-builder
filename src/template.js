@@ -90,7 +90,7 @@ const createInternCard = (intern) => {
 // Find way to match IF a position for function matches answer of inquirer job selection  
 template = (data) => {
 
-    let emptyArray = [];
+    emptyArray = [];
 
     for (let i = 0; i < data.length; i++) {
         let desiredJobSelected = data[i];
@@ -157,4 +157,4 @@ const templateInjection = (cardInfo) => {
 }
 
 // export module
-module.exports = template;
+module.exports = template

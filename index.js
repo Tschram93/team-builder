@@ -152,26 +152,6 @@ const staffQuestions = () => {
 
 
 // Error catch
-// const dataString = (data) => {
-//     let stringJson = JSON.stringify(data);
-//     const writeFile = data => {
-//         fs.writeFile('./dist/index.html', data, err => {
-//             if (err) {
-//                 console.log(err);
-//                 return;
-//             } else {
-//                 console.log("The Employee information has been used to make an html file!")
-//             }
-//         })
-//     }
-//     if (data == data) {
-//         stringJson
-//     }
-// }
-
-// function runPLEASE(datastring) {
-//     datastring
-// }
 
 
 // STRINGIFY
@@ -179,7 +159,6 @@ const writeFile = data => {
     console.log(data);
     if (data == data) {
         const stringJSON = JSON.stringify(data);
-
         stringJSON
     }
     console.log(data);
@@ -194,7 +173,6 @@ const writeFile = data => {
 }
 
 managerQuestions()
-    .then(staffQuestions)
     .then(team => {
         return template(team);
     })
