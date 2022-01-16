@@ -2,12 +2,9 @@
 const Manager = require('./library/Manager');
 const Engineer = require('./library/Engineer');
 const Intern = require('./library/Intern');
-const templatejs = require('./src/template.js')
 
 // DEPENDENCIES
 const inquirer = require('inquirer');
-// const jest = require(`jest`);
-// const path = require('path');
 const fs = require('fs');
 
 //Link html template
@@ -15,12 +12,6 @@ const template = require('./src/template.js');
 
 // TEAM variable
 let team = [];
-
-
-
-// PATH
-// const outputDir = path.resolve(__dirname, 'output');
-// const outputPath = path.join(outputDir, './src/template.js');
 
 // Set a way to render app into html
 
@@ -171,8 +162,11 @@ const writeFile = data => {
         }
     })
 }
-
+// Global to store all members
 managerQuestions()
+    .then(team => {
+        return staffQuestions();
+    })
     .then(team => {
         return template(team);
     })
@@ -183,3 +177,12 @@ managerQuestions()
     .catch(err => {
         console.log(err);
     });
+
+// function createNewFile(filename, data) {
+//     fs.writeFileSync(`employees.html`), data, (err) => {
+//         if (err) {
+//             console.log(err)
+//         }
+//         console.log('Employees webpage has been created');
+//     }
+// }

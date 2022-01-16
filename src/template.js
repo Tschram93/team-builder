@@ -89,7 +89,7 @@ const createInternCard = (intern) => {
 // TODO: Needs to push data to the page
 // Find way to match IF a position for function matches answer of inquirer job selection  
 template = (data) => {
-
+    console.log(data + 'template data');
     emptyArray = [];
 
     for (let i = 0; i < data.length; i++) {
@@ -116,6 +116,7 @@ template = (data) => {
     }
     const cardInfo = emptyArray.join('');
     const compileEmployees = templateInjection(cardInfo);
+    console.log(compileEmployees + 'compile');
     return compileEmployees;
 }
 
@@ -123,7 +124,7 @@ template = (data) => {
 // TODO: Generate the page as HTML file
 // Need to insert/inject html template into a file
 const templateInjection = (cardInfo) => {
-    `
+    return `
 <!DOCTYPE html>
 
 <html lang="en">
@@ -143,7 +144,7 @@ const templateInjection = (cardInfo) => {
 
 <body>
     <div class="container">
-
+        ${template}
 
     </div>
 
@@ -157,4 +158,4 @@ const templateInjection = (cardInfo) => {
 }
 
 // export module
-module.exports = template
+module.exports = templateInjection;
