@@ -107,14 +107,13 @@ const staffQuestions = () => {
 			},
 			{
 				message: `Add additional employee to roster?`,
-				choices: ['yes', 'no'],
-				type: 'list',
+				type: 'confirm',
 				name: 'addToRoster',
+				default: false,
 			},
 		])
 		.then((jobData) => {
 			let { name, id, email, role, github, school, addToRoster } = jobData;
-			myJSON;
 			let staff;
 			if (role === 'Intern') {
 				staff = new Intern(name, id, email, school);
