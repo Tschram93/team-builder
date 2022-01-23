@@ -18,37 +18,7 @@
 
 <body>
     <div class="container">
-        (data) => {
-    console.log(data + 'template data');
-    emptyArray = [];
 
-    for (let i = 0; i < data.length; i++) {
-        let desiredJobSelected = data[i];
-        const job = desiredJobSelected.jobSelection();
-
-        // Function for each job position
-        // TODO: MANAGER
-        if (job === 'Manager') {
-            let managerRole = createManagerCard(desiredJobSelected)
-            emptyArray.push(managerRole)
-        }
-        // TODO: ENGINEER
-        if (job === 'Engineer') {
-            let engineerRole = createEngineerCard(desiredJobSelected)
-            emptyArray.push(engineerRole)
-        }
-
-        // TODO: INTERN
-        if (job === 'Intern') {
-            let internRole = createInternCard(desiredJobSelected)
-            emptyArray.push(internRole)
-        }
-    }
-    const cardInfo = emptyArray.join('');
-    const compileEmployees = templateInjection(cardInfo);
-    console.log(compileEmployees + 'compile');
-    return compileEmployees;
-}
 
     </div>
 

@@ -1,24 +1,12 @@
-// REMINDER: Use bootstrap classes 
-
-
-// Create cards for each of the following: Manager, Engineer, Intern
-// Help video for html javascript templates https://www.youtube.com/watch?v=NgF9-pdTDGs
-// TODO: Templates each need a function
-
-// TODO: Manager Card
-
-// Template for Manager html
+// Template for Manager html 
 const createManagerCard = (manager) => {
-    // Needs nested template literals 
     return `
     <div class="card bg-secondary bg-opacity-25" style="width: 18rem;">
     <div class="card-body">
-        <!-- Get the blue background top to take up entirety with no grey/whitespace -->
         <section class="bg-primary text-white pb-1">
             <h5 class="card-title"> ${manager.name} </h5>
             <h6 class="card-subtitle mb-2">Manager</h6>
         </section>
-        <!-- Figure out how to remove the black solid circles (bullets) for the list -->
         <div>
             <ul class="list-unstyled lh-lg mt-4 d-flex flex-wrap justify-content-center">
                 <li class="bg-light border border-secondary mb-1">ID: ${manager.id}</li>
@@ -33,11 +21,8 @@ const createManagerCard = (manager) => {
     `;
 }
 
-// TODO: Engineer Card
-
 // Template for Engineer html
-const createEngineerCard = (engineer) => {
-    // Needs nested template literals 
+const createEngineerCard = (engineer) => { 
     return `
 <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
 <div class="card-body">
@@ -58,11 +43,8 @@ const createEngineerCard = (engineer) => {
 `;
 }
 
-// TODO: Intern
-
 // Template for Engineer html
 const createInternCard = (intern) => {
-    // Needs nested template literals 
     return `
 <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
 <div class="card-body">
@@ -87,9 +69,8 @@ const createInternCard = (intern) => {
 
 
 // TODO: Needs to push data to the page
-// Find way to match IF a position for function matches answer of inquirer job selection  
 template = (data) => {
-    console.log(data + 'template data');
+
     emptyArray = [];
 
     for (let i = 0; i < data.length; i++) {
@@ -115,7 +96,7 @@ template = (data) => {
         }
     }
     const cardInfo = emptyArray.join('');
-    const compileEmployees = templateInjection(cardInfo);
+    let compileEmployees = templateInjection(cardInfo);
     console.log(compileEmployees + 'compile');
     return compileEmployees;
 }
@@ -144,7 +125,7 @@ const templateInjection = (cardInfo) => {
 
 <body>
     <div class="container">
-        ${template}
+        ${cardInfo}
 
     </div>
 
