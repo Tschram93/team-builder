@@ -131,16 +131,7 @@ const staffQuestions = () => {
 		});
 };
 
-// Error catch
-
-// STRINGIFY
 const writeFile = (data) => {
-	console.log(data);
-	if (data == data) {
-		const stringJSON = JSON.stringify(data);
-		stringJSON;
-	}
-	console.log(data);
 	fs.writeFile('./dist/index.html', data, (err) => {
 		if (err) {
 			console.log(err);
@@ -154,25 +145,13 @@ const writeFile = (data) => {
 };
 // Global to store all members
 managerQuestions()
-	.then((team) => {
-		return staffQuestions();
-	})
+	.then(staffQuestions)
 	.then((team) => {
 		return template(team);
 	})
-	.then((webPage) => {
-		return writeFile(webPage);
+	.then((pageHTML) => {
+		return writeFile(pageHTML);
 	})
-	// add error catch
 	.catch((err) => {
 		console.log(err);
 	});
-
-// function createNewFile(filename, data) {
-//     fs.writeFileSync(`employees.html`), data, (err) => {
-//         if (err) {
-//             console.log(err)
-//         }
-//         console.log('Employees webpage has been created');
-//     }
-// }

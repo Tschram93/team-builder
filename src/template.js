@@ -1,6 +1,6 @@
-// Template for Manager html 
+// Template for Manager html
 const createManagerCard = (manager) => {
-    return `
+	return `
     <div class="card bg-secondary bg-opacity-25" style="width: 18rem;">
     <div class="card-body">
         <section class="bg-primary text-white pb-1">
@@ -19,11 +19,11 @@ const createManagerCard = (manager) => {
     </div>
 </div>
     `;
-}
+};
 
 // Template for Engineer html
-const createEngineerCard = (engineer) => { 
-    return `
+const createEngineerCard = (engineer) => {
+	return `
 <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
 <div class="card-body">
     <section class="bg-primary text-white pb-1">
@@ -41,11 +41,11 @@ const createEngineerCard = (engineer) => {
 </div>
 </div>                            
 `;
-}
+};
 
 // Template for Engineer html
 const createInternCard = (intern) => {
-    return `
+	return `
 <div class="card bg-secondary bg-opacity-25" style="width: 18rem;" id="cards">
 <div class="card-body">
     <section class="bg-primary text-white pb-1">
@@ -62,50 +62,44 @@ const createInternCard = (intern) => {
 </div>
 </div>
 `;
-}
-
-
-
-
+};
 
 // TODO: Needs to push data to the page
-template = (data) => {
+generatePage = (data) => {
+	emptyArray = [];
 
-    emptyArray = [];
+	for (let i = 0; i < data.length; i++) {
+		let employee = data[i];
+		const job = employee.jobSelection();
 
-    for (let i = 0; i < data.length; i++) {
-        let desiredJobSelected = data[i];
-        const job = desiredJobSelected.jobSelection();
+		// Function for each job position
+		// TODO: MANAGER
+		if (job === 'Manager') {
+			const managerRole = createManagerCard(employee);
+			emptyArray.push(managerRole);
+		}
+		// TODO: ENGINEER
+		if (job === 'Engineer') {
+			const engineerRole = createEngineerCard(employee);
+			emptyArray.push(engineerRole);
+		}
 
-        // Function for each job position
-        // TODO: MANAGER
-        if (job === 'Manager') {
-            let managerRole = createManagerCard(desiredJobSelected)
-            emptyArray.push(managerRole)
-        }
-        // TODO: ENGINEER
-        if (job === 'Engineer') {
-            let engineerRole = createEngineerCard(desiredJobSelected)
-            emptyArray.push(engineerRole)
-        }
+		// TODO: INTERN
+		if (job === 'Intern') {
+			const internRole = createInternCard(employee);
+			emptyArray.push(internRole);
+		}
+	}
+	const cardInfo = emptyArray.join('');
 
-        // TODO: INTERN
-        if (job === 'Intern') {
-            let internRole = createInternCard(desiredJobSelected)
-            emptyArray.push(internRole)
-        }
-    }
-    const cardInfo = emptyArray.join('');
-    let compileEmployees = templateInjection(cardInfo);
-    console.log(compileEmployees + 'compile');
-    return compileEmployees;
-}
-
+const compileStaff = createPage(cardInfo);
+	return compileStaff;
+};
 
 // TODO: Generate the page as HTML file
 // Need to insert/inject html template into a file
-const templateInjection = (cardInfo) => {
-    return `
+const createPage = (cardInfo) => {
+	return `
 <!DOCTYPE html>
 
 <html lang="en">
@@ -117,7 +111,7 @@ const templateInjection = (cardInfo) => {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Team</title>
+    <title>Team Profile</title>
 </head>
 <header class="bg-danger text-white py-4">
     <h1 class="text-center">My Team</h1>
@@ -136,7 +130,7 @@ const templateInjection = (cardInfo) => {
 
 </html>
 `;
-}
+};
 
 // export module
-module.exports = templateInjection;
+module.exports = generatePage;
